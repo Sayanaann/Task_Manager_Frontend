@@ -1,0 +1,71 @@
+<div class="container ">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <table class="table text-light">
+                <thead>
+                    <tr>
+
+                        <th scope="col">BRAVO Wayne</th>
+                        <th scope="col">MRN 33818716</th>
+                        <th scope="col">Gender Female</th>
+                        <th scope="col">Age 33y</th>
+                        <th scope="col">DOB 30 Nov 1998</th>
+                        <th scope="col">Location Hospital East Coast-SICU-03-01</th>
+                    </tr>
+                    <tr>
+                        
+                        <th>Patient Task</th>
+                        
+                            
+                       
+                        <th>
+                            <h5>Last Updated at: {{todaysDateTime}}</h5>
+                        </th>
+                       <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <th *ngIf="toolBarOpen" style="display: flex;">
+                        <p>{{selectedCount}} tasks selected</p>
+                        <button mat-icon-button  class="square-icon"   style="background-color:#837c7cd4; margin:0.3rem 1rem; " (click)="openDialog()" >
+                        <mat-icon class="mat-icon">delete</mat-icon>
+                    </button></th>
+                    
+                
+                </thead>
+            </table>
+            
+            <table class="table text-light" style="background-color: rgb(71, 72, 72); border-color: black;">
+                <thead>
+                    <tr>
+
+                        <td></td>
+                        <th scope="col">Task description</th>
+                        <th scope="col">Owner name</th>
+                        <th scope="col">Due today</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Priority</th>
+                        <th scope="col">Comment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of task">
+                        <ng-template [ngIf]="i.isdeleted==0" class="">
+                        <td><input type="checkbox" name="" id="" (change)="openToolBar($event, i.id)" >
+                        <td>{{i.taskDto.task_description}}</td>
+                        <td>{{i.ownerDto.name}}</td>
+                        <td>{{i.due_today}}</td>
+                        <td>{{i.status}}</td>
+                        <td>{{i.priority}}</td>
+                        <td>{{i.comment}}</td>
+                        </ng-template>
+                    </tr>
+                </tbody>
+
+
+            </table>
+           
+        </div>
+    </div>
+</div>

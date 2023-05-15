@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+.mat-toolbar {
+    background: #2d2c2c;
+    color: #FBFCFC;
+  }
+  .mat-mdc-dialog-container {
+    --mdc-dialog-container-color: #434141;
+    --mdc-dialog-supporting-text-color: #f8f9fa;
+}
+
+
+  
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+a.mdc-list-item {
+  color: white !important;
+}
